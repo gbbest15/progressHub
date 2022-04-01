@@ -76,8 +76,8 @@ class _ProgressHUDState extends State<ProgressHUD>
 
   void dismiss() {
     setState(() {
-      _isShow = false;
       _controller.reverse();
+      _isShow = false;
     });
   }
 

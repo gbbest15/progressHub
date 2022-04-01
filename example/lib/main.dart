@@ -1,3 +1,4 @@
+import 'package:example/new.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_progress_hud/flutter_progress_hud.dart';
 
@@ -28,23 +29,39 @@ class MyHomePage extends StatelessWidget {
                 ElevatedButton(
                   child: Text('Show for a second'),
                   onPressed: () {
-                    final progress = ProgressHUD.of(context);
-                    progress?.show();
-                    Future.delayed(Duration(seconds: 1), () {
-                      progress?.dismiss();
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Name(),
+                      ),
+                    );
+                    // final progress = ProgressHUD.of(context);
+                    // progress?.show();
+                    // Future.delayed(Duration(seconds: 1), () {
+                    //   progress?.dismiss();
+                    // });
                   },
                 ),
-                ElevatedButton(
-                  child: Text('Show with text'),
-                  onPressed: () {
-                    final progress = ProgressHUD.of(context);
-                    progress?.showWithText('Loading...');
-                    Future.delayed(Duration(seconds: 1), () {
-                      progress?.dismiss();
-                    });
-                  },
-                ),
+                // ElevatedButton(
+                //   child: Text('Show for a second'),
+                //   onPressed: () {
+                //     final progress = ProgressHUD.of(context);
+                //     progress?.show();
+                //     Future.delayed(Duration(seconds: 1), () {
+                //       progress?.dismiss();
+                //     });
+                //   },
+                // ),
+                // ElevatedButton(
+                //   child: Text('Show with text'),
+                //   onPressed: () {
+                //     final progress = ProgressHUD.of(context);
+                //     progress?.showWithText('Loading...');
+                //     Future.delayed(Duration(seconds: 1), () {
+                //       progress?.dismiss();
+                //     });
+                //   },
+                // ),
               ],
             ),
           ),
